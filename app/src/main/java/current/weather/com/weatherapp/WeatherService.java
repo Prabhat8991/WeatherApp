@@ -1,10 +1,7 @@
 package current.weather.com.weatherapp;
 
-import java.util.List;
-
 import retrofit.Callback;
 import retrofit.http.GET;
-import retrofit.http.Path;
 import retrofit.http.Query;
 
 /**
@@ -14,7 +11,7 @@ public interface WeatherService {
 
 
     @GET("/weather?appid=f84b55709c46a824fea22472dda4ef28")
-    void getWeather(@Query("q") String cityName, Callback<WeatherResponse> cb);
+    void getWeather(@Query("lat") double lat,@Query("lon") double lon, Callback<WeatherResponse> cb);
 
 
 }
